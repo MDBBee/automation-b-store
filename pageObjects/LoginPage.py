@@ -7,7 +7,7 @@ class LoginPage:
     textbox_password_id = "password"
     link_login_xpath = "//a[normalize-space()='sign-in']"
     button_login_main = "//button[normalize-space(text())='Sign In']"
-    link_logout_linktext = "//button[normalize-space(text())='M']"
+    link_usericon_linktext = "//button[normalize-space(text())='M']"
     logout_button = "button.hover\\:bg-accent.hover\\:text-accent-foreground"
 
     def __init__(self, driver: WebDriver):
@@ -27,5 +27,8 @@ class LoginPage:
     def clickLoginButton(self):
         self.driver.find_element(By.XPATH, self.button_login_main).click()
 
+    def clickUserIcon(self):
+        self.driver.find_element(By.LINK_TEXT, self.link_usericon_linktext).click()
+
     def clickLogout(self):
-        self.driver.find_element(By.LINK_TEXT, self.link_logout_linktext).click()
+        self.driver.find_element(By.LINK_TEXT, self.logout_button).click()
