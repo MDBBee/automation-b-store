@@ -12,8 +12,8 @@ class ReadConfig:
 
     @staticmethod
     def getUserEmail():
-        useremail = config.get("common info", "useremail")
-        return useremail
+        user_email = config.get("common info", "user_email")
+        return user_email
 
     @staticmethod
     def getPassword():
