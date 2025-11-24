@@ -51,11 +51,13 @@ class Test001Login:
             EC.element_to_be_clickable((By.XPATH, LoginPage.button_usericon_text))
         )
         login_button_letter = self.driver.find_element(By.XPATH, LoginPage.button_usericon_text)
-        # print("🐳🐳LB", login_button_letter)
-        # print("🐳🐳LB-LETTER", login_button_letter.text)
-        # "Sign-in"
+
         if login_button_letter.text == self.user_email[0].upper():
             assert True
+            self.lp.clickUserIcon()
+            time.sleep(2)
+            self.lp.clickLogout()
+            time.sleep(2)
             self.driver.close()
             self.logger.info("*********** Login Verification Passed ************")
         else:
